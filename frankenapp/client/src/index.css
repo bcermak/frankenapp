@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  background-image: url('./images/mountains.jpg');
+  background-color: royalblue;
+  background-size:100vmax;
+  background-blend-mode:screen;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+nav p {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  color: rgb(182, 73, 255);
+  font-size: 40px;
+  line-height: 32px;
+  float: left;
+  padding-left: 75px;
+  padding-top: 9px;
+}
+
+.lostBud{
+  text-align: center;
+  padding-top: 55px;
+}
+
+.lostBud :link:hover {
+  font-weight: 800;
+}
+
+.WeatherPage{
+  text-align: center;
+  padding-top: 55px;
+}
+
+#howitwas {
+  margin-top: 33px;
+  font-family: 'Reggae One', cursive;
+  text-align: center;
+}
+
+.postForm {
+  background-color: #2e1534;
+  border-style: inset;
+  border-color: rgb(148, 2, 245);
+  width: 415px;
+  height: 365px;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding-top: 25px;
+  overflow: auto;
+}
+
+.form-input {
+  text-align: center;
+  padding: 5px;
+}
+
+.form-input input, textarea {
+  text-align: center; 
+  width: 75%;
+  margin-bottom: 7px;
+}
+
+.btn.dropdown-toggle  {
+  width:150px;
+  text-align:left;
+}
+
+span.caret {
+  position: absolute;
+  left: 90%;
+  top: 45%;
+}
+
+label {
+  padding-top:5px;
+}
+
+.form-label {
+  padding-left:0px !important;
+}
+
+
+.btn-success {
+  margin-top: 5px;
+  background-color: #3b7d4a!important;
+}
+
+.btn-success:hover {
+  background-color: #4daf64!important;
+}
+
+.btn-primary {
+  margin-right: 15px;
+  height: 38px;
+  width: 72.73px;
+}
+
+.albumImage {
+  text-align: center;
+
+}
+
+.spotifyHead {
+  font-family: 'Reggae One', cursive;
+}
+
+.spotifyBody {
+  background-color: #2e1534;
+  border-style: inset;
+  border-color: rgb(148, 2, 245);
+  padding-left: 109px;
+  overflow: scroll;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.spotifyText {
+  color:white;
+}
+
+
+.mainForm {
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+  width: 500px;
+}
+
+
+.allPosts{
+  margin: 0 auto;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-style: solid;
+  width: 50%;
+}
+
+.postHolder {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  border-style: solid;
+}
+
+.postDate {
+  font-size: small;
+}
