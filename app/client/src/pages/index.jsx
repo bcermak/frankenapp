@@ -1,13 +1,14 @@
 import React from 'react';
+import Nav from '../components/Nav/Nav';
 import Footer from '../components/Footer';
-import LoginForm from '../components/LoginForm';
+
 
 
 const mainPage = () => {
 
     return (
         <div className='container'>
-        <LoginForm/>
+        <Nav />
         <Footer />
       </div>
     );
