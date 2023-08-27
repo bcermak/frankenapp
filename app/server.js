@@ -1,8 +1,10 @@
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
-const Journal = require('./models/JournalEntries')
-require('dotenv').configDotenv()
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const Journal = require('./models/JournalEntries');
+require('dotenv').configDotenv();
+
+app.use(express.json)
 
 const connectDB = async () => {
     try {
@@ -29,6 +31,21 @@ app.get("/api/journals", async (req,res) => {
     }
             
 });
+
+app.post("/api/createJournal", async (req, res) => {
+    const newJournal = new Journal({...req.body});
+    console.log(newJournal)
+    const insertJournal = await newJournal.save();
+    return res.status(201).json(insertJournal);
+    
+
+    // const journal = new Journal({
+    //     body: req.body.body,
+    //     author: req.body.author
+    // })
+    // await journal.save();
+    // res.send(journal);
+})
 
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));

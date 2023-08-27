@@ -6,7 +6,7 @@ const Journal = () => {
     return (
         <div className="container">
             <Nav />
-
+            
             <Footer /> 
         </div>
     );
