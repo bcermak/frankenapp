@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from '../components/Nav/Nav';
-import Footer from '../components/Footer/Footer';
-import '../assets/css/Weatherpage.css';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import './css/Weatherpage.css'
 
 
 const WeatherPage = () => {

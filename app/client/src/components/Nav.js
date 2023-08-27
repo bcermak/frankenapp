@@ -1,5 +1,5 @@
 import React from 'react';
-require('./Nav.css');
+require('./css/Nav.css');
 
 const Nav = () => {
   return (
