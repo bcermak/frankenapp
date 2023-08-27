@@ -1,27 +1,34 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const morgan = require('morgan');
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const Journal = require('./models/JournalEntries')
+require('dotenv').configDotenv()
 
+const connectDB = async () => {
+    try {
+        mongoose.set('strictQuery', false);
+        const conn = await mongoose.connect("mongodb+srv://bcermak:Skylar-10@triptails.kmoorxl.mongodb.net/TriptailsDB")
+        console.log(`Database connected ${conn.connection.host}`)
 
-const app = express();
+    } catch (error) {
+        console.log(error);
+        process.exit(1);
+    }
+}
+
+connectDB();
+
 const PORT = process.env.PORT || 8080;
 
-const routes = require('./routes/api')
-// Setting up Mongoose connection
-mongoose.connect('mongodb://localhost/encore_posts',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-
-mongoose.connection.on('connected', ()=>{
-    console.log("Mongoose is connected to DB")
+app.get("/api/journals", async (req,res) => {
+    try {
+        const data = await Journal.find({});
+        res.json(data)
+    } catch (error ){
+        res.status(500).json({ error: "An error has occured while fetching journal entries"});
+    }
+            
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false}))
 
-// HTTP request logger
-app.use(morgan('tiny'));
-app.use('/api', routes);
-
-app.listen(PORT, console.log(`Server is starting at ${PORT}`))
+app.listen(PORT, console.log(`Server is starting at ${PORT}`));
