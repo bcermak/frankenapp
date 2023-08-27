@@ -6,9 +6,9 @@ const Nav = () => {
     <>
     <nav className="navbar sticky-top bg-body-tertiary">
         <div className="container-fluid">
-            <a className="navbar-brand" href="/">Home</a>
-            <a className="navbar-brand" href="/newpost">New Post</a>
-            <a className="navbar-brand" href="Weather">Weather</a>
+            <a className="navbar" href="/">Home</a>
+            <a className="navbar" href="/newpost">New Post</a>
+            <a className="navbar" href="Weather">Weather</a>
         </div>
     </nav>
     </>
