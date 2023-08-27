@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
-const NewPost = () => {
+const Journal = () => {
     return (
         <div className="container">
             <Nav />
@@ -12,4 +12,4 @@ const NewPost = () => {
     );
 };
 
-export default NewPost
+export default Journal
