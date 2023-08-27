@@ -1,17 +1,17 @@
 import React from 'react'
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import './css/Weatherpage.css'
+import './css/Planner.css'
 
 
-const WeatherPage = () => {
+const Planner = () => {
     return (
         <div className="container">
             <Nav />
             <div className='row'>
                 <div className="col-md-12" style={{textAlign: 'center', padding: '33px'}}>
                     <input type="text" placeholder='city name'/>
-                    <button className='btn'> Weather button</button>
+                    <button className='btn'> Search something</button>
                 </div>
             </div>
             <div className="row">
@@ -23,4 +23,4 @@ const WeatherPage = () => {
     );
 };
 
-export default WeatherPage
+export default Planner

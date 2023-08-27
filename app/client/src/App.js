@@ -7,8 +7,9 @@ import {
 } from 'react-router-dom';
 //Pages
 import Home from './pages/Home';
-import WeatherPage from './pages/WeatherPage';
-import NewPost from './pages/NewPost';
+import Planner from './pages/Planner';
+import Journal from './pages/Journal';
+import Tunes from './pages/Tunes';
 
 
 function App() {
@@ -17,10 +18,10 @@ function App() {
     <Router>
       <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route exact path="/newpost" element={<NewPost />} />
-      <Route exact path="/weather" element={< WeatherPage />} />
+      <Route exact path="/journal" element={<Journal />} />
+      <Route exact path="/tunes" element={< Tunes />} />
+      <Route exact path="/planner" element={< Planner />} />
       </Routes>
-
     </Router>
 
   );

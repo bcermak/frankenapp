@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 require('./css/Nav.css');
 
 const Nav = () => {
@@ -6,9 +7,10 @@ const Nav = () => {
     <>
     <nav className="navbar sticky-top bg-body-tertiary">
         <div className="container-fluid">
-            <a className="navbar" href="/">Home</a>
-            <a className="navbar" href="/newpost">New Post</a>
-            <a className="navbar" href="Weather">Weather</a>
+          <Link to="/" style={{color: 'white'}}>Home</Link>
+          <Link to="/journal" style={{color: 'white'}}>Journal</Link>
+          <Link to="/tunes" style={{color: 'white'}}>Tunes</Link>
+          <Link to="/planner" style={{color: 'white'}}>Planner</Link>
         </div>
     </nav>
     </>
