@@ -6,7 +6,7 @@ import {
   Routes, 
 } from 'react-router-dom';
 //Pages
-import MainPage from './pages/index';
+import Home from './pages/Home';
 import WeatherPage from './pages/WeatherPage';
 import NewPost from './pages/NewPost';
 
@@ -16,7 +16,7 @@ function App() {
 
     <Router>
       <Routes>
-      <Route exact path="/" element={<MainPage />} />
+      <Route exact path="/" element={<Home />} />
       <Route exact path="/newpost" element={<NewPost />} />
       <Route exact path="/weather" element={< WeatherPage />} />
       </Routes>

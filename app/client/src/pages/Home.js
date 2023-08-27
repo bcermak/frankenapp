@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 
 
-const mainPage = () => {
+const Home = () => {
 
     return (
         <div className='container'>
@@ -14,5 +14,5 @@ const mainPage = () => {
     );
 };
 
-export default mainPage;
+export default Home;
 
