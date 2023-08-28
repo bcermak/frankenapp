@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const Journal = require('./models/JournalEntries');
+const routes = require('./routes/api')
 
 const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
+
+app.use(express.json())
+app.use('/api/', routes);
 
 const connectDB = async () => {
     try {
@@ -19,32 +22,6 @@ const connectDB = async () => {
     }
 }
 connectDB();
-
-app.use(express.json())
-
-app.get("/api/journals", async (req,res) => {
-    try {
-        const data = await JournalModel.find({});
-        res.json(data)
-    } catch (error ){
-        res.status(500).json({ error: "An error has occured while fetching journal entries"});
-    }
-});
-
-app.post("/api/createJournal", async (req, res) => {
-   
-    const journal = new Journal({
-        body: req.body.body,
-        author: req.body.author
-    })
-    try {
-        const savedJournal = await journal.save();
-        res.json(savedJournal)
-    } catch (err) {
-        res.json({message: err})
-    }
-
-})
 
 const PORT = process.env.PORT || 8080;
 
