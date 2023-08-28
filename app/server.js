@@ -3,11 +3,11 @@ const app = express();
 const mongoose = require('mongoose');
 const routes = require('./routes/api')
 
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser") // self-explanatory 
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
 
-app.use(express.json())
+app.use(express.json()) //receives JSON
 app.use('/api/', routes);
 
 const connectDB = async () => {

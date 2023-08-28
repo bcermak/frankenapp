@@ -1,15 +1,16 @@
 import React from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import JournalEntry from '../components/JournalEntry';
 
-const Journal = () => {
+const NewJournal = () => {
     return (
-        <div className="container">
+        <>
             <Nav />
-            
+            <JournalEntry />
             <Footer /> 
-        </div>
+        </>
     );
 };
 
-export default Journal
+export default NewJournal

@@ -1,0 +1,24 @@
+.formArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+    color: white;
+}
+
+.entryArea {
+    background-color: #ff89898b;
+    width: 500px;
+    height: 500px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.textBox {
+    width: 400px;
+    height: 250px;
+    max-height: 400px;
+   
+}
+
+
