@@ -6,15 +6,17 @@ import ('./css/Journals.css')
 const Journals = () => {
   return (
     <>
+        <div className='container'>
             <Nav />
-            <div className='formArea'>
-                <div className='displayPosts'>
-                    <div> Post 1 </div>
-                    <div> Post 2 </div>
-                    <div> Post 3 </div>
+                <div className='formArea'>
+                    <div className='displayPosts'>
+                        <div> Post 1 </div>
+                        <div> Post 2 </div>
+                        <div> Post 3 </div>
+                    </div>
                 </div>
-            </div>
             <Footer />
+        </div>
     </>
   )
 }

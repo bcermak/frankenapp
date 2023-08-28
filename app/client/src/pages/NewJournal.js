@@ -6,9 +6,11 @@ import JournalEntry from '../components/JournalEntry';
 const NewJournal = () => {
     return (
         <>
-            <Nav />
-            <JournalEntry />
-            <Footer /> 
+            <div className='container'>
+                <Nav />
+                <JournalEntry />
+                <Footer /> 
+            </div>
         </>
     );
 };

@@ -5,7 +5,7 @@ import './css/Tunes.css';
 
 const Tunes = () => {
   return (
-    <div>
+    <div className='container'>
         <Nav />
         <Footer />
     </div>
