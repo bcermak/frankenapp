@@ -1,15 +1,17 @@
+require('dotenv').config();
+const mongoose = require('mongoose');
+const routes = require('./routes/api');
+const bodyParser = require("body-parser");
+const cors = require('cors');
+
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
-require('dotenv').config();
-const routes = require('./routes/api');
-const bodyParser = require("body-parser") // self-explanatory 
 
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
-
 app.use(express.json()) //receives JSON
 app.use('/api/', routes);
+app.use(cors()); 
 
 const connectDB = async () => {
     try {
