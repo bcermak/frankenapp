@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const Journal = require('./models/JournalEntries');
-require('dotenv').configDotenv();
 
-app.use(express.json)
+const bodyParser = require("body-parser")
+app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
+app.use(bodyParser.json()); // Send JSON responses
 
 const connectDB = async () => {
     try {
@@ -17,35 +18,34 @@ const connectDB = async () => {
         process.exit(1);
     }
 }
-
 connectDB();
 
-const PORT = process.env.PORT || 8080;
+app.use(express.json())
 
 app.get("/api/journals", async (req,res) => {
     try {
-        const data = await Journal.find({});
+        const data = await JournalModel.find({});
         res.json(data)
     } catch (error ){
         res.status(500).json({ error: "An error has occured while fetching journal entries"});
     }
-            
 });
 
 app.post("/api/createJournal", async (req, res) => {
-    const newJournal = new Journal({...req.body});
-    console.log(newJournal)
-    const insertJournal = await newJournal.save();
-    return res.status(201).json(insertJournal);
-    
+   
+    const journal = new Journal({
+        body: req.body.body,
+        author: req.body.author
+    })
+    try {
+        const savedJournal = await journal.save();
+        res.json(savedJournal)
+    } catch (err) {
+        res.json({message: err})
+    }
 
-    // const journal = new Journal({
-    //     body: req.body.body,
-    //     author: req.body.author
-    // })
-    // await journal.save();
-    // res.send(journal);
 })
 
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));
