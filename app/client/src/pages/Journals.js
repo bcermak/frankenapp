@@ -32,7 +32,7 @@ const Journals = () => {
                             </div>    
                         )
                     })}
-                    </div>
+                </div>
             <Footer />
         </div>
     </>

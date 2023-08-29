@@ -16,14 +16,12 @@ router.post("/createJournal", async (req, res) => {
     const data = req.body;
     const newJournal = new Journal(data);
 
-   await newJournal.save().then( (err) => {
-    if (!err) {
-        res.status(201).json({ message: "Successfully inserted into DB"})
-    } else {
-        res.status(500).json({ message: err})
-    }
-   })
-
+   await newJournal.save().then( () => { 
+    res.status(201).json({ message: "Successfully inserted into DB"})
+  })
+  .catch(error => {
+      res.status(500).json({ message: error})
+  });
 });
 
 module.exports = router;
