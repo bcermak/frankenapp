@@ -5,13 +5,20 @@
     height: 500px;
     padding-top: 20px;
     text-align: center;
+    margin: 0 auto;
 }
 
 .textBox {
     width: 400px;
     height: 250px;
     max-height: 400px;
+    margin: 0 auto;
    
 }
 
+.entryBtn {
+    background-color: #f47c7c;
+    color: white;
+    padding: 5px;
+}
 
