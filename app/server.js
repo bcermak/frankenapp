@@ -7,11 +7,13 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 
+app.use(cors()); 
+
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
 app.use(express.json()) //receives JSON
 app.use('/api/', routes);
-app.use(cors()); 
+
 
 const connectDB = async () => {
     try {
