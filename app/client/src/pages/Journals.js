@@ -9,7 +9,7 @@ import ('./css/Journals.css')
 const Journals = () => {
 
     const [journal, setJournal] = useState([ 
-        { body: "", author: ""}
+        { body: "", author: "", createdAt: null}
     ])
 
     useEffect( () => {
@@ -27,8 +27,9 @@ const Journals = () => {
                     {journal.map((journal) => {
                         return (
                             <div className='displayPosts'>
-                                <p> {journal.body}</p>
-                                <p> {journal.author}</p>
+                                <p> {journal.body} </p>
+                                <p> {journal.author} </p>
+                                <p> {journal.createdAt} </p>
                             </div>    
                         )
                     })}

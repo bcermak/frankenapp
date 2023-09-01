@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 
 const JournalSchema = new mongoose.Schema({
@@ -10,6 +11,10 @@ const JournalSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    createdAt: {
+        type: Date,
+        default: Date.now()
+    }
 });
 
 const JournalModel = mongoose.model("journals", JournalSchema);
