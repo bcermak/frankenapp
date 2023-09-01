@@ -16,6 +16,10 @@
    
 }
 
+.form-control {
+    margin-bottom: 2em;
+}
+
 .entryBtn {
     background-color: #f47c7c;
     color: white;

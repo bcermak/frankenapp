@@ -26,17 +26,18 @@ const JournalEntry = () => {
     .catch(error => {
         console.log(error.response)
     });
-  }
 
+    document.formArea.reset();
+  }
 
   return (
     <div className='container'>
-      <form className='formArea' onSubmit={handleSubmit}>
+      <form name="formArea"className='formArea' onSubmit={handleSubmit}>
           <div className='entryArea'>
               <div className="textBox mb-3">
                   <label htmlFor="journalText" className="form-label">Journal Entry</label>
-                  <textarea className="form-control" rows="1"  onChange={ (e) => setAuthor(e.target.value)}></textarea>
-                  <textarea className="form-control" rows="10" onChange={ (e) => setBody(e.target.value)}></textarea>
+                  <textarea className="form-control" placeholder='Author' rows="1"  onChange={ (e) => setAuthor(e.target.value)}></textarea>
+                  <textarea className="form-control" placeholder='Journal content'rows="10" onChange={ (e) => setBody(e.target.value)}></textarea>
               </div>          
           </div>
           { ! isPending && <button className='entryBtn'>Submit entry</button>}
